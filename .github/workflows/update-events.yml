@@ -2,7 +2,7 @@ name: Update events.json from Firebase
 
 on:
   schedule:
-    - cron: '0 * * * *'  # every hour
+    - cron: '* * * * *'
   workflow_dispatch:      # manual trigger option
 
 jobs:
