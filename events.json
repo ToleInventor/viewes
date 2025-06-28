@@ -16,6 +16,20 @@
   {
     "type": "normal",
     "title": "breaktime",
+    "time": "02:05",
+    "tone": "Better days",
+    "delay": 2
+  },
+  {
+    "type": "normal",
+    "title": "breaktime",
+    "time": "02:05",
+    "tone": "Better days",
+    "delay": 2
+  },
+  {
+    "type": "normal",
+    "title": "breaktime",
     "time": "01:55",
     "tone": "Better days",
     "delay": 2
