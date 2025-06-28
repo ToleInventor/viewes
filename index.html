@@ -10,11 +10,14 @@
       background: #f2f2f2;
       padding: 2em;
     }
-    h2 { text-align: center; margin-bottom: 1em; }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
     .event-card {
-      background: #fff;
-      margin: 1em auto;
+      background: white;
       padding: 1em;
+      margin: 1em auto;
       width: 90%;
       max-width: 500px;
       border-radius: 8px;
@@ -52,8 +55,10 @@
       list.innerHTML = '';
 
       try {
-        const normalSnap = await db.collection("normalEvents").get();
-        const specialSnap = await db.collection("specialEvents").get();
+        const [normalSnap, specialSnap] = await Promise.all([
+          db.collection("normalEvents").get(),
+          db.collection("specialEvents").get()
+        ]);
 
         if (normalSnap.empty && specialSnap.empty) {
           list.innerHTML = "<p>No events found.</p>";
@@ -61,32 +66,32 @@
         }
 
         normalSnap.forEach(doc => {
-          const data = doc.data();
+          const event = doc.data();
           const card = document.createElement('div');
           card.className = 'event-card';
           card.innerHTML = `
-            <div class="event-title">${data.title || 'Untitled Normal Event'}</div>
-            <div class="event-detail"><strong>Time:</strong> ${data.time}</div>
-            <div class="event-detail"><strong>Tone:</strong> ${data.tone}</div>
+            <div class="event-title">${event.title || 'Untitled Normal Event'}</div>
+            <div class="event-detail"><strong>Time:</strong> ${event.time}</div>
+            <div class="event-detail"><strong>Tone:</strong> ${event.tone}</div>
           `;
           list.appendChild(card);
         });
 
         specialSnap.forEach(doc => {
-          const data = doc.data();
+          const event = doc.data();
           const card = document.createElement('div');
           card.className = 'event-card';
           card.innerHTML = `
-            <div class="event-title">${data.description || 'Special Event'}</div>
-            <div class="event-detail"><strong>Time:</strong> ${data.time}</div>
-            <div class="event-detail"><strong>Tone:</strong> ${data.tone}</div>
+            <div class="event-title">${event.description || 'Untitled Special Event'}</div>
+            <div class="event-detail"><strong>Time:</strong> ${event.time}</div>
+            <div class="event-detail"><strong>Tone:</strong> ${event.tone}</div>
           `;
           list.appendChild(card);
         });
 
       } catch (err) {
-        console.error("Failed to load events:", err);
-        list.innerHTML = "<p>Error loading events. Check the console for details.</p>";
+        console.error("Error loading events:", err);
+        list.innerHTML = "<p>Failed to load events. Check console for errors.</p>";
       }
     }
 
