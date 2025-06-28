@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Today's ESP32 Events</title>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f8f9fa;
+    }
+    h2 {
+      text-align: center;
+    }
+    .event-card {
+      background: white;
+      padding: 1em;
+      margin: 1em 0;
+      border-radius: 8px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+    .event-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .event-detail {
+      margin: 0.2em 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Today's Scheduled Events</h2>
+  <div id="event-list"></div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDinvWHwLtRFGSY5_IBzJzbrhhDs4lOJeo",
+      authDomain: "electric-bell.firebaseapp.com",
+      projectId: "electric-bell",
+      storageBucket: "electric-bell.appspot.com",
+      messagingSenderId: "871235935211",
+      appId: "1:871235935211:web:fc4d97fd75a9020bae57ae",
+      measurementId: "G-L6CD8YBYPT"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function loadTodaysEsp32Events() {
+      const list = document.getElementById("event-list");
+      list.innerHTML = "";
+
+      try {
+        const snapshot = await db.collection("normalEvents").get();
+        if (snapshot.empty) {
+          list.innerHTML = "<p>No events scheduled for today.</p>";
+          return;
+        }
+
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          const card = document.createElement("div");
+          card.className = "event-card";
+          card.innerHTML = `
+            <div class="event-title">${data.d || 'Untitled Event'}</div>
+            <div class="event-detail"><strong>Time:</strong> ${data.time}</div>
+            <div class="event-detail"><strong>Tone:</strong> ${data.tone}</div>
+            <div class="event-detail"><strong>Delay:</strong> ${data.delay || 0}s</div>
+          `;
+          list.appendChild(card);
+        });
+
+      } catch (err) {
+        console.error("Error loading events:", err);
+        list.innerHTML = "<p>Failed to load events. Check console for details.</p>";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadTodaysEsp32Events);
+  </script>
+</body>
+</html>
