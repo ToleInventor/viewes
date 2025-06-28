@@ -14,6 +14,13 @@
     "delay": 4
   },
   {
+    "type": "normal",
+    "title": "breaktime",
+    "time": "01:55",
+    "tone": "Better days",
+    "delay": 2
+  },
+  {
     "type": "special",
     "description": "livingstone",
     "time": "18:40",
