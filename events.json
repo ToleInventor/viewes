@@ -7,6 +7,13 @@
     "delay": 10
   },
   {
+    "type": "normal",
+    "title": "Break",
+    "time": "17:45",
+    "tone": "Better days",
+    "delay": 10
+  },
+  {
     "type": "special",
     "description": "yellow card",
     "time": "01:00",
