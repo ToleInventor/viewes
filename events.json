@@ -14,6 +14,13 @@
     "delay": 10
   },
   {
+    "type": "normal",
+    "title": "Late lunch",
+    "time": "17:50",
+    "tone": "Hello world",
+    "delay": 1258
+  },
+  {
     "type": "special",
     "description": "yellow card",
     "time": "01:00",
