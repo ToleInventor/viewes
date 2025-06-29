@@ -33,12 +33,5 @@
     "time": "01:55",
     "tone": "Better days",
     "delay": 2
-  },
-  {
-    "type": "special",
-    "description": "livingstone",
-    "time": "18:40",
-    "tone": "Good morning africa",
-    "delay": 0
   }
 ]
