@@ -1,5 +1,19 @@
 [
   {
+    "type": "normal",
+    "title": "morning preps",
+    "time": "11:55",
+    "tone": "Better days",
+    "delay": 10
+  },
+  {
+    "type": "normal",
+    "title": "morning preps",
+    "time": "11:55",
+    "tone": "Better days",
+    "delay": 10
+  },
+  {
     "type": "special",
     "description": "Ndindi nyoro is coming to school",
     "time": "10:54",
