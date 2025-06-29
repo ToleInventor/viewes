@@ -12,5 +12,12 @@
     "time": "01:00",
     "tone": "Blessing",
     "delay": 0
+  },
+  {
+    "type": "special",
+    "description": "the principal wants to meet students",
+    "time": "17:40",
+    "tone": "Blessing",
+    "delay": 0
   }
 ]
