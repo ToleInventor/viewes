@@ -15,6 +15,13 @@
   },
   {
     "type": "special",
+    "description": "yellow card",
+    "time": "01:00",
+    "tone": "Blessing",
+    "delay": 0
+  },
+  {
+    "type": "special",
     "description": "Ndindi nyoro is coming to school",
     "time": "10:54",
     "tone": "Blessing",
