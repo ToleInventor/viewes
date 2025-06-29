@@ -1,6 +1,13 @@
 [
   {
     "type": "special",
+    "description": "Ndindi nyoro is coming to school",
+    "time": "10:54",
+    "tone": "Blessing",
+    "delay": 0
+  },
+  {
+    "type": "special",
     "description": "mr. chengo is from church",
     "time": "10:47",
     "tone": "Blessing",
