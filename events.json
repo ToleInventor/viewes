@@ -15,6 +15,13 @@
   },
   {
     "type": "normal",
+    "title": "breaktime",
+    "time": "15:44",
+    "tone": "Better days",
+    "delay": 0
+  },
+  {
+    "type": "normal",
     "title": "ujyt",
     "time": "15:38",
     "tone": "Better days",
