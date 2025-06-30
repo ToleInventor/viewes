@@ -1,16 +1,16 @@
 [
   {
     "type": "normal",
-    "title": "morning preps",
-    "time": "11:55",
+    "title": "FIRST LESSON",
+    "time": "08:20",
     "tone": "Better days",
-    "delay": 10
+    "delay": 15
   },
   {
-    "type": "normal",
-    "title": "Break",
-    "time": "17:45",
-    "tone": "Better days",
-    "delay": 10
+    "type": "special",
+    "description": "MP VISIT",
+    "time": "16:00",
+    "tone": "Blessing",
+    "delay": 0
   }
 ]
