@@ -8,6 +8,13 @@
   },
   {
     "type": "special",
+    "description": "WILDLIFE MEETING",
+    "time": "13:45",
+    "tone": "Blessing",
+    "delay": 0
+  },
+  {
+    "type": "special",
     "description": "MP VISIT",
     "time": "16:00",
     "tone": "Blessing",
