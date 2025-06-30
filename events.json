@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "type": "normal",
+    "title": "FIRST BREAK",
+    "time": "16:21",
+    "tone": "Better days",
+    "delay": 0
+  },
+  {
+    "type": "special",
+    "description": "BOM VISIT",
+    "time": "16:25",
+    "tone": "Blessing",
+    "delay": 0
+  }
+]
