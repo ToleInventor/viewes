@@ -14,6 +14,13 @@
     "delay": 0
   },
   {
+    "type": "normal",
+    "title": "Late lunch",
+    "time": "14:30",
+    "tone": "Better days",
+    "delay": 10
+  },
+  {
     "type": "special",
     "description": "SPECIAL ONE",
     "time": "14:25",
